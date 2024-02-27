@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Header from "./components/Header";
+/* import { AboutPage } from "./pages/about-page";
+import { UserDetailsPage } from "./pages/user-details-page";
 
-function App() {
+import { Search } from "./components/search-section";
+import { ResultSearch } from "./components/result-search-section";
+import { SearchUserProvider } from "./Search-user-context"; */
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={''}>
+            
+            {/* <SearchUserProvider>
+            <Header />
+            <Search />
+            <ResultSearch />
+          </SearchUserProvider> */}
+          </Route>
+          <Route path="/accounts" element={''}/>
+          <Route path="/support" element={''}/>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
-}
+};
 
 export default App;
