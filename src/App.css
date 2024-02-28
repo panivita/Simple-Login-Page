@@ -6,20 +6,7 @@ body {
   background-color: #cccccc;
 }
 
-.logo-img {
-  border-radius: 50%;
-  width: 25%;
-}
-
-.user-logo {
-  width: 70%;
-  padding: 5%;
-  background: #cfd0ca;
-  box-shadow: 1px 1px 2px #ccc;
-  border-radius: 5px;
-}
-
-.header-container {
+.header-container, .login-container, .account-container, .container {
   margin: 5px auto;
   text-align: center;
   width: 60%;
@@ -38,17 +25,17 @@ body {
   margin: 0;
 }
 
-.navbar-container a {
+.navbar-container a,  .navbar-container p {
   text-decoration: none;
   color: #9dd9f0;
-  margin-left: 10%;
+  margin: 0 10% 0 0;
   text-transform: uppercase;
   font-weight: bold;
 }
 
 
 @media screen and (max-width: 1050px) {
-  .header-container {
+  .header-container, .login-container, .account-container, .container {
     width: 90%;
   }
 }

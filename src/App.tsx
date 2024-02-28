@@ -1,30 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-/* import { AboutPage } from "./pages/about-page";
-import { UserDetailsPage } from "./pages/user-details-page";
-
-import { Search } from "./components/search-section";
-import { ResultSearch } from "./components/result-search-section";
-import { SearchUserProvider } from "./Search-user-context"; */
+import Login from "./components/Login";
+import Accounts from "./components/Accounts";
+import Support from "./components/Support";
+import { getStorageValue } from "./utils/getStorageValue";
 
 const App = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const user = getStorageValue('user');
+
+ useEffect(() => {
+	if (user) {
+		setLoggedIn(true);
+	}
+  }, [user]); 
+  
   return (
     <>
-      <Header />
+      <Header loggedIn={loggedIn}/>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={''}>
-            
-            {/* <SearchUserProvider>
-            <Header />
-            <Search />
-            <ResultSearch />
-          </SearchUserProvider> */}
+          <Route path="/" element={""}>
           </Route>
-          <Route path="/accounts" element={''}/>
-          <Route path="/support" element={''}/>
+          <Route path="/login" element={<Login setLoggedIn={setLoggedIn}/>} />
+          <Route path="/accounts" element={<Accounts/>} />
+          <Route path="/support" element={<Support/>} />
         </Routes>
       </BrowserRouter>
     </>
