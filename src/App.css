@@ -33,6 +33,24 @@ body {
   font-weight: bold;
 }
 
+.label-container {
+  width: 50%;
+  margin: 1rem auto 0;
+  text-align: left;
+}
+
+.input-container, .button {
+  width: 50%;
+  padding: 10px 0;
+}
+
+.button {
+  margin: 1.5rem auto;
+  background-color: #9dd9f0;
+  font-family: "Segoe Print", cursive;
+  font-weight: bold;
+  color: white;
+}
 
 @media screen and (max-width: 1050px) {
   .header-container, .login-container, .account-container, .container {
